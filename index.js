@@ -1,8 +1,13 @@
 let glassix = document.getElementById("glassix-container");
 let chatGreeting = document.getElementById("chatGreetinPopup");
-let isChatVisible,isNewMessage = false;
+let isChatVisible= false;
+isNewMessage = false;
 let isFirstLoad= true;
 window.addEventListener('click', closeChatGreeting);
+
+function onload(){
+    chatVisibilityChanged(false);
+}
 
 function openChatPopup() {
     widgetClient.setWidgetVisiblity(true);
@@ -15,7 +20,7 @@ function closeChatGreeting() {
 }
 
 function timerForProductsPages(timeInMs=0){
-    if (window.location.href.includes('products') ) {
+    if (window.location?.href.toLowerCase().includes('products') ) {
        setTimeout(() => {
             if(!isChatVisible && !isNewMessage){
                 chatGreeting.classList.add("open-popup");
@@ -26,11 +31,14 @@ function timerForProductsPages(timeInMs=0){
 
 function chatVisibilityChanged(event){
     isChatVisible = event;
+    console.log('visib');
     if(!event && !isFirstLoad){
         timerForProductsPages(15000);
+        console.log('1111visib');
     } else if(!event && isFirstLoad){
         timerForProductsPages(5000);
         isFirstLoad = false;
+        console.log('2222visib');
     }
 }
 
