@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Vendome Popup</title>
+  </head>
+  <body onload="openPopup()">
+    <div class="container">
+      <div id="chatGreetinPopup" class="popup">
+        <button id="greeting-close-button">X</button>
+        <img
+          class="vendome-logo"
+          src="https://cdn.shopify.com/s/files/1/0554/1593/1048/files/VENDOME-LOGO-PNG_5105842e-57a3-4a79-8a70-ad2be7fcabf0_140x.png?v=1646897518"
+          alt="Vendome Logo"
+        />
+        <h2>תודה שבחרת בנו</h2>
+        ֿ
+        <p>שירות חדש! שיחת צא׳ט לייב עם נציג, מענה תוך מספר דקות</p>
+        <button
+          type="button"
+          class="open-chat-button"
+          onclick="openChatPopup()"
+        >
+          לחץ כאן לשיחה עם נציג
+        </button>
+      </div>
+    </div>
+
+    <!-- Start of Glassix Chat Widget -->
+
+    <script class="popup" id="popup">
+      var widgetOptions = {
+        apiKey: "0990953c-9f9d-44b2-b4b9-f4a8a7a98d96",
+        snippetId: "d8e69b3af5dab42f8766",
+      };
+
+      (function (n) {
+        var u = function () {
+            GlassixWidgetClient && typeof GlassixWidgetClient == "function"
+              ? ((window.widgetClient = new GlassixWidgetClient(n)),
+                widgetClient.attach(),
+                window.glassixWidgetScriptLoaded &&
+                  window.glassixWidgetScriptLoaded())
+              : f();
+          },
+          f = function () {
+            r.onload = u;
+            r.src = "https://cdn.glassix.net/clients/widget.1.2.min.js";
+            i.parentNode.removeChild(t);
+            i.parentNode.insertBefore(r, i);
+          },
+          i = document.getElementsByTagName("script")[0],
+          t = document.createElement("script"),
+          r;
+        ((t.async = !0),
+        (t.type = "text/javascript"),
+        (t.crossorigin = "anonymous"),
+        (t.id = "glassix-widget-script"),
+        (r = t.cloneNode()),
+        (t.onload = u),
+        (t.src = "https://cdn.glassix.com/clients/widget.1.2.min.js"),
+        !document.getElementById(t.id) && document.body) &&
+          (i.parentNode.insertBefore(t, i), (t.onerror = f));
+      })(widgetOptions);
+    </script>
+    <!-- End of Glassix Chat Widget -->
+    <script src="index.js"></script>
+  </body>
+</html>
