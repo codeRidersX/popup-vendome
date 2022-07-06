@@ -18,15 +18,15 @@
           alt="Vendome Logo"
         />
         <h2>? זקוקים לעזרה<h2>
-        ֿ
-        <p></p>
-        <button
-          type="button"
-          class="open-chat-button"
-          onclick="openChatPopup()"
-        >
-          לחצו כאן לשיחה עם שירות
-        </button>
+          ֿ
+          <p>שיחה עם מענה אנושי ומהיר</p>
+          <button
+            type="button"
+            class="open-chat-button"
+            onclick="openChatPopup()"
+          >
+            לחצו כאן לשיחה עם שירות
+          </button>
       </div>
 
 
@@ -36,7 +36,7 @@
         apiKey: "0990953c-9f9d-44b2-b4b9-f4a8a7a98d96",
         snippetId: "d8e69b3af5dab42f8766",
         events:{
-          'visiblity': (e)=> chatVisibilityChanged(e),
+          'visiblity': (ev)=> chatVisibilityChanged(ev),
           'newMessage': ()=> newMessage(),
         }
       };
